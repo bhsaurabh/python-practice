@@ -7,7 +7,7 @@ def convert(num):
     s = Stack()
     while num > 0:
         s.push(num % 2)
-        num = num / 2
+        num = num // 2
     binary = 0
     power = s.size() - 1
     while not s.isEmpty():
