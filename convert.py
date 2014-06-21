@@ -4,6 +4,9 @@ import sys
 converted = []  # stores the converted string as a list
 
 def convert(base, num):
+    """
+    Converts a number in base 10 to any other base
+    """
     reference = '0123456789ABCDEF'
     if num < base:
         # base case
@@ -17,6 +20,16 @@ def convert(base, num):
     # now append to converted list
     converted.append(ch)
 
+
+def convert_aliter(n,base):
+    """
+    An alternative way to convert from one base to another
+    """
+    convert_string = "0123456789ABCDEF"
+    if n < base:
+        return convert_string[n]
+    else:
+        return convert_aliter(n//base, base) + convert_string[n%base]
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
