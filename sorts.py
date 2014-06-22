@@ -3,6 +3,7 @@
 def bubble(a_list):
     """
     Sorts a list using short-bubble sort
+    O(N^2) compares and O(N^2) exchanges
     """
     exchanges = True
     pass_number = len(a_list) - 1  # number of passes
@@ -13,3 +14,17 @@ def bubble(a_list):
                 exchanges = True
                 # exchange
                 a_list[i], a_list[i+1] = a_list[i+1], a_list[i]
+
+def selection(a_list):
+    """
+    Sorts a list using selection sort
+    """
+    # find minimum and put it in position
+    N = len(a_list)
+    for i in range(N):
+        min = i
+        for j in range(i+1, N):
+            if a_list[j] < a_list[min]:
+                min = j
+        a_list[i], a_list[min] = a_list[min], a_list[i]
+    
